@@ -16,7 +16,7 @@ DB_Connect();
 app.use(express.json());
 app.use(cookieParser());    
 const corsOptions = {
-    origin:"https://twiter-clone-ivory.vercel.app",
+    origin:"https://twiter-clone-neon.vercel.app",
     credentials:true
 }
 

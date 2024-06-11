@@ -117,7 +117,9 @@ const login = async (req,res)=>{
             token,
             {
                 expiresIn:"1d",
-                httpOnly:true
+                httpOnly:true,
+                secure:true,
+                sameSite:"None"
             }
         ).json({
             success:true,
@@ -139,7 +141,7 @@ const login = async (req,res)=>{
 
 
 const logout = (req,res)=>{
-    return res.cookie("token","",{expiresIn:new Date(Date.now())}).json({
+    return res.cookie("token","",{expiresIn:new Date(Date.now()),secure:true,sameSite:"None"}).json({
         success:true,
         msg:"Logout successfully"
     })
